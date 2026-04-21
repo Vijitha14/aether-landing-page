@@ -1,0 +1,131 @@
+:root {
+    --bg: #050505;
+    --accent: #00f2ff;
+    --text: #ffffff;
+    --glass: rgba(255, 255, 255, 0.03);
+    --border: rgba(255, 255, 255, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* Ambient Background Lights */
+.glow-1, .glow-2 {
+    position: fixed;
+    width: 40vw;
+    height: 40vw;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0, 242, 255, 0.15) 0%, transparent 70%);
+    z-index: -1;
+    filter: blur(80px);
+}
+.glow-1 { top: -10%; right: -10%; }
+.glow-2 { bottom: -10%; left: -10%; }
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 10%;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+}
+
+.logo { font-weight: 800; letter-spacing: 4px; font-size: 1.5rem; }
+
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+h1 {
+    font-size: 5rem;
+    font-weight: 800;
+    letter-spacing: -2px;
+    margin-bottom: 20px;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg,#ffffff, var(--accent));
+    -webkit-background-clip: text;
+    background-clip:text;
+}
+
+p {
+    max-width: 600px;
+    font-size: 1.2rem;
+    color: #888;
+    margin-bottom: 40px;
+}
+
+/* Glassmorphism Cards */
+.glass {
+    background: var(--glass);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 40px;
+    transition: transform 0.3s ease;
+}
+
+.glass:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent);
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 100px 10%;
+}
+
+.btn-primary {
+    background: #fff;
+    color: #000;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-primary:hover { box-shadow: 0 0 20px rgba(255,255,255,0.4); }
+
+.testimonials {
+    text-align: center;
+    padding: 150px 20%;
+}
+
+blockquote { font-size: 2rem; font-style: italic; margin-bottom: 20px; }
+
+/* Reveal Animation Class */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
